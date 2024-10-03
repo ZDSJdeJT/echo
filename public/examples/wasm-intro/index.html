@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WebAssembly 初探👀</title>
+		<script type="module">
+			const fibonacci = (n) => (n <= 1 ? n : fibonacci(n - 1) + fibonacci(n - 2));
+
+			const cases = [
+				{
+					label: "js",
+					fn: fibonacci,
+				},
+				{
+					label: "wasm",
+					fn: (await WebAssembly.instantiateStreaming(fetch("./fibonacci.wasm"))).instance.exports
+						.fibonacci,
+				},
+			];
+
+			cases.forEach(({ label, fn }) => {
+				console.time(label);
+				for (let i = 1; i <= 40; i++) {
+					fn(i);
+				}
+				console.timeEnd(label);
+			});
+		</script>
+	</head>
+
+	<body>
+		<h1>WebAssembly 初探👀</h1>
+	</body>
+</html>

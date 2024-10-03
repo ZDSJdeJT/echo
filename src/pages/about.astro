@@ -1,0 +1,132 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description:
+		"了解 Echo——一名热衷于编程的软件开发者，分享技术见解和生活点滴。在这个页面，你将看到我的个人背景。欢迎深入了解我的故事！",
+	title: "关于",
+};
+const skills: { desc: string; title: string }[] = [
+	{
+		title: "前端开发",
+		desc: "熟练掌握网页、小程序和 App 开发（React Native），能够构建响应式和用户友好的界面。",
+	},
+	{
+		title: "后端开发",
+		desc: "熟悉 Spring Boot 等后端框架及中间件的使用，能够构建高性能的后端服务。",
+	},
+	{
+		title: "数据库",
+		desc: "熟悉关系型数据库和非关系型数据库的使用，能够有效管理和优化数据存储。",
+	},
+	{
+		title: "消息队列",
+		desc: "对消息队列的概念有一定了解，熟悉其在异步处理和微服务架构中的应用。",
+	},
+	{
+		title: "容器化技术",
+		desc: "熟悉 Docker，能够进行应用的容器化部署，提升开发和运维效率。",
+	},
+	{
+		title: "版本控制",
+		desc: "熟悉 Git，能够进行高效的版本管理与协作开发。",
+	},
+];
+
+const naturalLanguages: string[] = ["中文 - 母语", "English - CET 4", "日本語 - N3"];
+
+const computerLanguages: string[] = ["JavaScript", "TypeScript", "Java"];
+
+const technologies: { desc: string; href: string; title: string }[] = [
+	{
+		desc: "The Progressive JavaScript Framework.",
+		href: "https://vuejs.org/",
+		title: "Vue",
+	},
+	{
+		desc: "The library for web and native user interfaces.",
+		href: "https://vuejs.org/",
+		title: "React",
+	},
+	{
+		desc: "The React Framework for the Web.",
+		href: "https://nextjs.org/",
+		title: "Next",
+	},
+	{
+		desc: "A progressive Node.js framework for building efficient, reliable and scalable server-side applications.",
+		href: "https://nestjs.com/",
+		title: "Nest",
+	},
+	{
+		desc: "Spring makes Java simple/modern/productive/reactive.",
+		href: "https://spring.io/",
+		title: "Spring Boot",
+	},
+];
+---
+
+<PageLayout meta={meta}>
+	<section class="space-y-6">
+		<h1 class="title">关于我♾️</h1>
+		<p>
+			嘿！我是
+			Echo，目前生活在江苏南京。我热爱编程⌨️和羽毛球🏸，目前从事前端开发的工作。未来，我希望向全栈开发和后端开发方向发展。不过，我的编码能力不只局限于
+			Web 领域🌐。
+		</p>
+		<p>
+			我一直觉得维护博客很困难，我宁愿做事也不愿写东西。但是我做的越多，学到的越多，我就越觉得有必要记录下来，这样我就可以回顾过去，看看我已经走了多远，并试图弄清楚我要去哪里。
+		</p>
+		<p>这是我的一些技能：</p>
+		<ul class="list-inside list-disc">
+			{
+				skills.map(({ title, desc }) => (
+					<li>
+						<strong>{title}：</strong>
+						{desc}
+					</li>
+				))
+			}
+		</ul>
+	</section>
+	<section class="mt-16">
+		<h2 class="title mb-4 text-xl">我掌握的自然语言：</h2>
+		{
+			naturalLanguages.map((language) => (
+				<span class="m-1 inline-block rounded bg-pink-100 px-2.5 py-0.5 text-sm font-medium text-pink-800 dark:bg-pink-900 dark:text-pink-300">
+					{language}
+				</span>
+			))
+		}
+	</section>
+	<section class="mt-16">
+		<h2 class="title mb-4 text-xl">我熟练运用的编程语言：</h2>
+		{
+			computerLanguages.map((language) => (
+				<span class="m-1 inline-block rounded bg-green-100 px-2.5 py-0.5 text-sm font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
+					{language}
+				</span>
+			))
+		}
+	</section>
+	<section class="mt-16">
+		<h2 class="title mb-4 text-xl">我擅长的技术栈：</h2>
+		<dl class="space-y-4">
+			{
+				technologies.map(({ desc, href, title }) => (
+					<div class="flex flex-col gap-2 sm:flex-row">
+						<dt>
+							<span class="flex">
+								<a class="link" href={href} rel="noreferrer" target="_blank">
+									{title}
+								</a>
+								:
+							</span>
+						</dt>
+						<dd>{desc}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</section>
+</PageLayout>

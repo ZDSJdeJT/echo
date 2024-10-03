@@ -1,0 +1,33 @@
+---
+import { getAllPosts, getUniqueTagsWithCount } from "@/data/post";
+import PageLayout from "@/layouts/Base.astro";
+
+const allPosts = await getAllPosts();
+const allTags = getUniqueTagsWithCount(allPosts);
+
+const meta = {
+	description: "我在博客中涉及到的的所有主题（主题）。",
+	title: "所有主题",
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-6">主题🏷️</h1>
+	<ul class="space-y-4">
+		{
+			allTags.map(([tag, val]) => (
+				<li class="flex items-center gap-x-2">
+					<a
+						class="link inline-block"
+						data-astro-prefetch
+						href={`/tags/${tag}/`}
+						title={`查看所有涉及此主题的博客——${tag}`}
+					>
+						&#35;{tag}
+					</a>
+					<span class="inline-block">- {val} 篇博客</span>
+				</li>
+			))
+		}
+	</ul>
+</PageLayout>

@@ -1,0 +1,13 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "你好像迷路了！",
+	title: "404 Not Found",
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-6">404 Not Found</h1>
+	<p class="mb-8"><a class="link" href="javascript:history.back(-1)">cd ..</a></p>
+</PageLayout>
