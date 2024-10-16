@@ -156,7 +156,7 @@ export const App = () => {
 
 答案就是使用 React 提供的 [`renderToString`](https://react.dev/reference/react-dom/server/renderToString) 函数，通过它我们可以获取到组件运行后的 HTML。
 
-```typescript title="src/server.tsx" {2, 22}
+```typescript title="src/server.tsx" ins={2, 22}
 import type { Serve } from "bun";
 import { renderToString } from "react-dom/server";
 
