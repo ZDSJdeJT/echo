@@ -2,7 +2,7 @@
 title: "在 JavaScript 中实现单例模式🥇"
 description: "在本文中，我们将探讨如何在 JavaScript 中实现单例模式。这种设计模式确保一个类只有一个实例，并提供全局访问点。通过实际代码示例和详细解释，帮助你掌握如何在 JavaScript 中创建和管理单例对象。"
 publishDate: "2024/09/11"
-updatedDate: "2024/09/14"
+updatedDate: "2024/10/17"
 tags: ["JavaScript", "Design Patterns"]
 ---
 

@@ -2,7 +2,7 @@
 title: "WebAssembly 初探👀"
 description: "探索 WebAssembly 的基础知识，了解它如何提升网页性能，让我们一起揭开 WebAssembly 的神秘面纱！"
 publishDate: "2024/09/13"
-updatedDate: "2024/09/14"
+updatedDate: "2024/10/17"
 tags: ["WebAssembly", "JavaScript", "Zig"]
 ---
 
