@@ -2,7 +2,7 @@
 title: "使用 Bun + React 构建服务端渲染示例🫗"
 description: "本文将介绍如何利用 Bun 和 React 实现一个简单的服务器端渲染（SSR）应用。文章中将提供丰富的代码示例，帮助你理解 SSR 的实现机制。"
 publishDate: "2024/10/17"
-updatedDate: "2024/10/17"
+updatedDate: "2024/10/20"
 tags: ["React", "TypeScript"]
 ---
 
@@ -102,7 +102,7 @@ export default {
   "module": "src/server.tsx",
   "type": "module",
   "scripts": {
-    "dev": "bun -b --watch --hot run src/server.tsx"
+    "dev": "bun -b --hot run src/server.tsx"
   },
   "devDependencies": {
     "@types/bun": "latest",
