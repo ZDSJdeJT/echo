@@ -11,7 +11,7 @@ const post = defineCollection({
 	schema: () =>
 		z.object({
 			coverImage: z.string().optional(),
-			description: z.string().min(50).max(160),
+			description: z.string().min(1).max(160),
 			draft: z.boolean().default(false),
 			publishDate: z
 				.string()
